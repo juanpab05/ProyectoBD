@@ -1,0 +1,69 @@
+/* Contenedor principal */
+.user-type-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2; /* Fondo gris claro */
+  }
+  
+  /* Caja de selección */
+  .user-type-box {
+    width: 500px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Título principal */
+  .user-type-title {
+    font-size: 2.5rem;
+    color: #f29904; /* Naranja Attenzio */
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Subtítulo */
+  .user-type-subtitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Contenedor de botones */
+  .user-type-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Botones */
+  .user-type-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1;
+  }
+  
+  .user-type-button.profesor {
+    background-color: #f29904; /* Naranja Attenzio */
+  }
+  
+  .user-type-button.profesor:hover {
+    background-color: #d98103; /* Naranja oscuro */
+  }
+  
+  .user-type-button.estudiante {
+    background-color: #4b77be; /* Azul */
+  }
+  
+  .user-type-button.estudiante:hover {
+    background-color: #3a5c8c; /* Azul oscuro */
+  }
+  

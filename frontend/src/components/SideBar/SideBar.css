@@ -1,0 +1,114 @@
+/* Contenedor del menú */
+.sidebar-container {
+  position: relative;
+}
+
+/* Menú lateral */
+.menu {
+  width: 250px;
+  background-color: #808080; /* Gris oscuro */
+  color: white;
+  padding: 20px;
+  position: fixed; /* Menú fijo en la pantalla */
+  left: -340px; /* Oculto por defecto */
+  top: 0;
+  bottom: 0;
+  transition: left 0.3s ease;
+  z-index: 1000; /* Siempre por encima de otros elementos */
+}
+
+.menu-open {
+  left: 0; /* Visible cuando se abre */
+}
+
+/* Estilo del contenido dentro del menú */
+.menu-header {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-nav li {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.menu-nav li:hover {
+  color: #ffcc00; /* Amarillo */
+}
+
+/* Botón de menú dentro del header */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 500; /* Aseguramos que esté encima del contenido */
+}
+
+.bar {
+  background-color: #000;
+  height: 3px;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Cambios en el ícono al abrir el menú */
+.menu-open .menu-toggle .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open .menu-toggle .bar:nth-child(2) {
+  opacity: 0; /* Oculta la barra central */
+}
+
+.menu-open .menu-toggle .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Botón de cierre dentro del menú */
+.menu-close {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px; /* Ubicación del botón dentro del menú */
+  right: -40px; /* Fuera del menú */
+}
+
+.menu-close .bar {
+  background-color: #000;
+  height: 3px;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Cambios en el ícono al abrir el menú */
+.menu-open .menu-close .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open .menu-close .bar:nth-child(2) {
+  opacity: 0; /* Oculta la barra central */
+}
+
+.menu-open .menu-close .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

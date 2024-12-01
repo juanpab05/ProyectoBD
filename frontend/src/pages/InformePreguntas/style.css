@@ -1,0 +1,32 @@
+
+  
+  /* Encabezados de la tabla */
+  .table-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    background-color: #ddd;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px 5px 0 0;
+  }
+
+  
+  .table-body .table-row:last-child {
+    border-bottom: none;
+  }
+  
+  /* Títulos en las filas */
+  .pregunta-titulo {
+    font-weight: bold;
+    color: #f39200;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .table-header, .table-body .table-row {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  

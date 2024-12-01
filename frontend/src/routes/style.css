@@ -1,0 +1,23 @@
+/** style.css -> routes */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/** Contenedor principal pages */
+
+.Contenedor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido al inicio del eje vertical */
+    background-color: #ffffff; /* Fondo blanco */
+    /*padding: 1.375rem; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle un mejor diseño */
+    box-sizing: border-box;
+    overflow-y: auto; /* Permitir desplazamiento si el contenido supera la altura */
+}

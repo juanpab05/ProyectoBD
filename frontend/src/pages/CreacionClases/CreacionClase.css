@@ -1,0 +1,53 @@
+/* Estilos para Creación de Clases - Profesor */
+.create-class-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .create-class-box {
+    width: 600px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .create-class-title {
+    font-size: 2.5rem;
+    color: #f29904;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .create-class-subtitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .create-class-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .create-class-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #f29904;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-class-btn:hover {
+    background-color: #d98103;
+  }
+  

@@ -1,0 +1,15 @@
+/* Contenedor para los encabezados */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  
+  .subtitle {
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+    color: #000000;
+  }
+  

@@ -1,0 +1,47 @@
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0e0e0; /* Naranja claro */
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Contenedor del header */
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    width: 100%;
+  }
+  
+  
+  /* Estilo del logo */
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Asegura que el logo se mantenga centrado */
+  }
+  
+  .black {
+    color: #000000;
+  }
+  
+  .highlight {
+    color: #ff9900; /* Naranja */
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
