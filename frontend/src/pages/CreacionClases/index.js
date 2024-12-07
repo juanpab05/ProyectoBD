@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './CreacionClase.css'; // Importa el archivo CSS
 
 const CreacionClase = () => {
@@ -12,8 +13,8 @@ const CreacionClase = () => {
           <input type="date" placeholder="Fecha" required />
           <input type="time" placeholder="Hora" required />
           <input type="text" placeholder="Materiales de clase" required />
-          <button type="submit" className="create-class-btn">Guardar</button>
-          <button type="button" className="create-class-btn">Descartar</button>
+          <button type="submit" className="create-class-btn"> <Link to='/historial'> Guardar</Link></button>
+          <button type="button" className="create-class-btn"> <Link to='/historial'> Descartar </Link> </button>
         </form>
       </div>
     </div>

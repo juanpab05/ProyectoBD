@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import './UserType.css'; // Importa el archivo CSS
 
 const UserType = () => {
@@ -10,8 +11,8 @@ const UserType = () => {
           Bienvenido a Attenzio, ¿Cuál de los siguientes roles te identifica?
         </h2>
         <div className="user-type-buttons">
-          <button className="user-type-button profesor">Profesorado</button>
-          <button className="user-type-button estudiante">Estudiante</button>
+          <button className="user-type-button profesor"> <Link to='/registro'> Profesorado </Link></button>
+          <button className="user-type-button estudiante"> <Link> Estudiante </Link></button>
         </div>
       </div>
     </div>

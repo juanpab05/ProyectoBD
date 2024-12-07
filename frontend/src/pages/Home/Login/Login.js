@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import './Login.css'; // Importa el archivo CSS para los estilos
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
           <label htmlFor="password">Contraseña:</label>
           <input type="password" id="password" placeholder="Ingresa tu contraseña" required />
 
-          <button type="submit" className="login-button">Iniciar sesión</button>
+          <button type="submit" className="login-button"><Link to='/historial'> Iniciar sesión</Link></button>
 
           <div className="login-links">
             <a href="#forgot-password">¿Olvidaste tu contraseña?</a>

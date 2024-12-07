@@ -24,7 +24,7 @@ const SideBar = ({ menuOpen, toggleMenu }) => {
           <ul>
             <li><Link to='/historial'>Inicio</Link></li>
             <li><Link to='/creacionclase'>  Crear clase </Link></li>
-            <li><Link to='reportes'> Reportes de las clases </Link></li>
+            <li><Link to='/reportes'> Reportes de las clases </Link></li>
             <li><Link to='/crearpreguntas'>Crear preguntas/subir material a clases</Link></li>
           </ul>
         </nav>

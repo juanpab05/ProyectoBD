@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'; 
 import "./Registro.css";
 
 function Registro() {
@@ -47,7 +48,7 @@ function Registro() {
               <input type="password" id="confirmarContraseña" placeholder="Confirme su contraseña" />
             </div>
           </div>
-          <button type="submit" className="register-button">Registrarse</button>
+          <button type="submit" className="register-button"> <Link to='/'> Registrarse </Link></button>
         </form>
       </div>
     </div>
