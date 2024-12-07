@@ -22,11 +22,10 @@ const SideBar = ({ menuOpen, toggleMenu }) => {
         </div>
         <nav className="menu-nav">
           <ul>
-            <li><Link to='/'>Inicio</Link></li>
-            <li>Crear clase</li>
-            <li>Clases creadas</li>
-            <li>Reportes de las clases</li>
-            <li>Crear preguntas/subir material a clases</li>
+            <li><Link to='/historial'>Inicio</Link></li>
+            <li><Link to='/creacionclase'>  Crear clase </Link></li>
+            <li><Link to='reportes'> Reportes de las clases </Link></li>
+            <li><Link to='/crearpreguntas'>Crear preguntas/subir material a clases</Link></li>
           </ul>
         </nav>
       </aside>

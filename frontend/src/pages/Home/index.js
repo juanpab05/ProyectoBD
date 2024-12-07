@@ -12,8 +12,8 @@ const Home = () => {
           </h1>
         </div>
         <div className="buttons">
-          <button className="button login">Iniciar sesión</button>
-          <button className="button register">Registrarse</button>
+          <button className="button login"><Link to='/login'> Iniciar sesión</Link></button>
+          <button className="button register"><Link to='/registro'> Registrarse </Link></button>
         </div>
       </header>
       <section className="main-content">
