@@ -1,5 +1,6 @@
 import React from "react";
 import "./SideBar.css";
+import { Link } from "react-router-dom";
 
 const SideBar = ({ menuOpen, toggleMenu }) => {
   return (
@@ -21,7 +22,7 @@ const SideBar = ({ menuOpen, toggleMenu }) => {
         </div>
         <nav className="menu-nav">
           <ul>
-            <li>Inicio</li>
+            <li><Link to='/'>Inicio</Link></li>
             <li>Crear clase</li>
             <li>Clases creadas</li>
             <li>Reportes de las clases</li>
