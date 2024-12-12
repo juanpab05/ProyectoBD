@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom'; 
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom'; 
+import { loginUsuario } from '../../../api/login';
 import './Login.css'; // Importa el archivo CSS para los estilos
 
 const Login = () => {
@@ -12,17 +12,15 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/usuario/api/login/', {
-        correo: correo,
-        contraseña: contraseña,
-      });
+      // Llama a la función de la API con los datos del login
+      const response = await loginUsuario({ correo, contraseña });
 
       if (response.status === 200) {
         // Redirect to the main page with the username
-        navigate(`/historial/${response.data.username}`);
+        navigate(`/historial/${response.username}`);
       } else {
-        // Handle error
-        alert(response.data.message);
+        // Maneja un error en el login
+        alert(response.message);
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -68,33 +66,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// import React from 'react';
-// import { Link } from 'react-router-dom'; 
-// import './Login.css'; // Importa el archivo CSS para los estilos
-
-// const Login = () => {
-//   return (
-//     <div className="login-container">
-//       <div className="login-box">
-//         <h1 className="login-title">Attenzio</h1>
-//         <form className="login-form">
-//           <label htmlFor="email">Correo:</label>
-//           <input type="email" id="email" placeholder="Ingresa tu correo" required />
-
-//           <label htmlFor="password">Contraseña:</label>
-//           <input type="password" id="password" placeholder="Ingresa tu contraseña" required />
-
-//           <button type="submit" className="login-button"><Link to='/historial'> Iniciar sesión</Link></button>
-
-//           <div className="login-links">
-//             <a href="#forgot-password">¿Olvidaste tu contraseña?</a>
-//             <a href="/registro">Crear una cuenta</a>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
