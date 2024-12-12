@@ -13,9 +13,6 @@ class Asistencia(models.Model):
     class Meta:
         db_table = 'asistencia'
         unique_together = (('id_usuario', 'id_clase'),)
-        # constraints = [
-        #     models.UniqueConstraint(fields=['id_usuario', 'id_clase'], name='unique_asistencia')
-        # ]
 
     def __str__(self):
         return f"Asistencia de usuario {self.id_usuario} a clase {self.id_clase}"
