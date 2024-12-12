@@ -1,8 +1,11 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
 
-from .models import Clase
+from .models import Usuario, Clase
 from .serializer import ClaseSerializer
+
+  # views.py
+from rest_framework.views import APIView
 
 class ListCreateClase(generics.ListAPIView):
   queryset = Clase.objects.all()
@@ -16,9 +19,3 @@ class ListCreateClase(generics.ListAPIView):
       return Response(serr.validated_data, status=status.HTTP_200_OK)  
     
     return Response(status=status.HTTP_400_BAD_REQUEST)
-  
-  
-    
-    
-    
-    
