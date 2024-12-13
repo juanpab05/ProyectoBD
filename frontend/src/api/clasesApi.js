@@ -21,3 +21,13 @@ export const createClase = async (claseData) => {
     throw error;
   }
 };
+
+export const obtenerClasesProfesor = async (nombreUsuario) => {
+  try {
+    const response = await axios.get(`/api/profesor/${nombreUsuario}/clases`);
+    return response.data; // Devuelve las clases obtenidas de la API
+  } catch (error) {
+    console.error("Error al obtener las clases del profesor:", error);
+    throw new Error("No se pudieron cargar las clases.");
+  }
+};
