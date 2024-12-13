@@ -18,7 +18,6 @@ const Historial = () => {
           setLoading(true);
           const datos = await obtenerClasesCurso(nombreUsuario, nombreCurso); // Llama a la API
           setClases(datos); // Actualiza el estado con las clases obtenidas
-          console.log(clases);
         } catch (err) {
           setError("No se pudieron cargar las clases. Inténtalo más tarde.");
         } finally {
@@ -36,10 +35,8 @@ const Historial = () => {
       {/* Contenido principal */}
       <div className="content">
         
-        
         {/* Header */}
         <Header />
-
 
         {/* Lista dinámica */}
         <main className="main">
@@ -51,7 +48,7 @@ const Historial = () => {
             
             {clases.map((clase, index) => (
               <div key={index} className="item">
-                <span className="clase">{clase.nombre}</span>
+                <span className="clase">Clase {index + 1}</span>
                 <div className="date">
                   <span className="class-date">{clase.fecha}</span>
                 </div>

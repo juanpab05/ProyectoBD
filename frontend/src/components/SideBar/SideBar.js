@@ -1,8 +1,10 @@
 import React from "react";
 import "./SideBar.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const SideBar = ({ menuOpen, toggleMenu }) => {
+  const { nombreUsuario, nombreCurso } = useParams(); // Captura los parámetros desde la URL
+
   return (
     <div className="sidebar-container">
       {/* Menú lateral */}
@@ -22,11 +24,11 @@ const SideBar = ({ menuOpen, toggleMenu }) => {
         </div>
         <nav className="menu-nav">
           <ul>
-            <li><Link to='/historial'>Inicio</Link></li>
-            <li><Link to='/creacionclase'>  Crear clase </Link></li>
-            <li><Link to='/reportes'> Reportes de las clases </Link></li>
-            <li><Link to='/crearpreguntas'>Crear preguntas/subir material a clases</Link></li>
-            <li><Link to='/'> Cerrar sesion </Link></li>
+          <li><Link to={`/${nombreUsuario}/cursos/${nombreCurso}/historial`}>Inicio</Link></li> 
+          <li><Link to={`/${nombreUsuario}/cursos/${nombreCurso}/creacionclase`}>Crear clase</Link></li> 
+          <li><Link to={`/${nombreUsuario}/cursos/${nombreCurso}/reportes`}>Reportes de las clases</Link></li>
+          <li><Link to={`/${nombreUsuario}/cursos/${nombreCurso}/crearpreguntas`}>Crear preguntas/subir material a clases</Link></li> 
+          <li><Link to="/">Cerrar sesión</Link></li>
           </ul>
         </nav>
       </aside>
