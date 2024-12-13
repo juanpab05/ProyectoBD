@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import { loginUsuario } from '../../../api/login';
+import axios from 'axios';
 import './Login.css'; // Importa el archivo CSS para los estilos
 
 const Login = () => {

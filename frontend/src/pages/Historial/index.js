@@ -1,9 +1,12 @@
 import React from 'react';
 import "../style.css";
 import "./Historial.css";
+import { useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 
 const Historial = () => {
+  const { nombreUsuario } = useParams(); // Captura el parámetro dinámico
+
   // Datos de las clases
   const clases = [
     { nombre: "CLASE 1", fecha: "05/12/2024" },
