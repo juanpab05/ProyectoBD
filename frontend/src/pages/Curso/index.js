@@ -9,6 +9,7 @@ const CursosProfesor = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  console.log(nombreUsuario)
   useEffect(() => {
     const fetchCursos = async () => {
       try {

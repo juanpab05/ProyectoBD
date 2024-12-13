@@ -1,3 +1,4 @@
+# apps/profesorCurso/views.py
 from rest_framework import generics, status
 from rest_framework.response import Response
 
@@ -20,37 +21,26 @@ class ListCreateProfesorCurso(generics.ListAPIView):
       return Response(serr.validated_data, status=status.HTTP_200_OK)  
     
     return Response(status=status.HTTP_400_BAD_REQUEST)
-  
+
 class CursosPorProfesorView(APIView):
-    def get(self, request, nombreUsuario):  # Capturamos 'nombreUsuario' desde kwargs
-        print(f"Parámetro 'nombreUsuario' recibido: {nombreUsuario}")
-
+    def get(self, request, nombreUsuario):
         try:
-            # Intentar obtener el usuario por su nombre de usuario
-            usuario = get_object_or_404(Usuario, nombre=nombreUsuario)
-            print(f"Usuario obtenido: {usuario}")
-
-            # Filtrar los cursos asignados a este usuario
+            usuario = Usuario.objects.get(nombre=nombreUsuario)
             cursos_profesor = ProfesorCurso.objects.filter(id_usuario=usuario.id_usuario)
-            print(f"Cursos asociados a {usuario.nombre}: {cursos_profesor}")
-
-            # Verificar si no hay cursos asociados
             if not cursos_profesor:
                 return Response({"error": "No se encontraron cursos asociados a este usuario."}, status=status.HTTP_404_NOT_FOUND)
 
-            # Formatear los datos de los cursos
             cursos_data = [
                 {
-                    "id": curso.id_curso.id,
-                    "nombre": curso.id_curso.nombre,
+                    "id": curso.id_curso.id_curso,
+                    "nombre": curso.id_curso.nombre_curso,
                     "seccion": getattr(curso.id_curso, 'seccion', None),
                 }
                 for curso in cursos_profesor
             ]
 
-            print(f"Datos de los cursos a retornar: {cursos_data}")
-
             return Response(cursos_data, status=status.HTTP_200_OK)
+        except Usuario.DoesNotExist:
+            return Response({"error": "Usuario no encontrado"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
-            print(f"Error en el procesamiento: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

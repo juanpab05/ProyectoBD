@@ -16,6 +16,7 @@ export const fetchCursosPorProfesor = async (nombreUsuario) => {
     try {
       // Actualizamos la URL para incluir 'nombreUsuario' como parte de la ruta
       const response = await axios.get(`${API_URL}${nombreUsuario}/`);
+      console.log(response.data)
       return response.data;
     } catch (error) {
       console.error("Error fetching professor's courses:", error);
