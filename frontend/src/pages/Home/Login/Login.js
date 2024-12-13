@@ -10,17 +10,17 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      // Llama a la función de la API con los datos del login
-      const response = await loginUsuario({ correo, contraseña });
-
+      const response = await axios.post('http://127.0.0.1:8000/usuario/api/login/', {
+        correo: correo,
+        contraseña: contraseña,
+      });
       if (response.status === 200) {
         // Redirect to the main page with the username
-        navigate(`/historial/${response.username}`);
+        navigate(`/historial/${response.data.username}`);
       } else {
-        // Maneja un error en el login
-        alert(response.message);
+        // Handle error
+        alert(response.data.message);
       }
     } catch (error) {
       console.error("Error during login:", error);
