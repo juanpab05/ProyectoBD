@@ -18,7 +18,7 @@ const Login = () => {
       });
       if (response.status === 200) {
         // Redirect to the main page with the username
-        navigate(`/historial/${response.data.username}`);
+        navigate(`/${response.data.username}/cursos`);
       } else {
         // Handle error
         alert(response.data.message);

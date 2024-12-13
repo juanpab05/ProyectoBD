@@ -11,7 +11,7 @@ const AdminRoutes = [
     { path: '/reportes', element: <Reportes /> },
     { path: '/informepreguntas', element: <InformePreguntas /> },
     { path: '/crearpreguntas', element: <CrearPreguntas /> },
-    { path: '/curso', element: <CursosProfesor /> }
+    { path: '/:nombreUsuario/cursos', element: <CursosProfesor /> }
 ];
 
 export default AdminRoutes;
