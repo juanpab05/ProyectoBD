@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import "../style.css";
 import "./Historial.css";
 import { useParams} from 'react-router-dom';
-import { obtenerClasesProfesor } from '../../api/clasesApi';
+import { obtenerClasesCurso } from '../../api/clasesApi';
 import Header from '../../components/Header/Header';
 
 const Historial = () => {
-  const { nombreUsuario } = useParams(); // Captura el nombreUsuario desde la URL
+  const { nombreUsuario, nombreCurso } = useParams(); // Captura el nombreUsuario desde la URL
   const [clases, setClases] = useState([]); // Estado para las clases
   const [loading, setLoading] = useState(true); // Estado de carga
   const [error, setError] = useState(null); // Estado para errores
@@ -16,8 +16,9 @@ const Historial = () => {
       const fetchClases = async () => {
         try {
           setLoading(true);
-          const datos = await obtenerClasesProfesor(nombreUsuario); // Llama a la API
+          const datos = await obtenerClasesCurso(nombreUsuario, nombreCurso); // Llama a la API
           setClases(datos); // Actualiza el estado con las clases obtenidas
+          console.log(clases);
         } catch (err) {
           setError("No se pudieron cargar las clases. Inténtalo más tarde.");
         } finally {
@@ -27,14 +28,6 @@ const Historial = () => {
   
       fetchClases();
     }, [nombreUsuario]);
-
-  // Datos de las clases
-  // const clases = [
-  //   { nombre: "CLASE 1", fecha: "05/12/2024" },
-  //   { nombre: "CLASE 2", fecha: "06/12/2024" },
-  //   { nombre: "CLASE 3", fecha: "07/12/2024" },
-  //   { nombre: "CLASE 4", fecha: "08/12/2024" },
-  // ];
 
   return (
     <div className="container">
@@ -55,6 +48,7 @@ const Historial = () => {
             <h1 className="subtitle">Fecha</h1>
           </div>
           <div className="list">
+            
             {clases.map((clase, index) => (
               <div key={index} className="item">
                 <span className="clase">{clase.nombre}</span>

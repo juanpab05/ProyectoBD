@@ -47,7 +47,7 @@ VALUES(3, 'Jose Pedro', 'Patiño', 'juan.patino@gmail.com', 'roblox7777', '31563
 INSERT INTO curso(qr_curso, nombre_curso)
 VALUES('14578b', 'Quimica inorganica'),
 ('24721a', 'Matematicas basicas'),
-('15897b', 'Geografía'),
+('15897b', 'Geografia'),
 ('22478a', 'Algebra lineal'),
 ('26578b', 'Ingles'),
 ('14589b', 'Quimica organica'),

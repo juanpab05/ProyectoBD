@@ -34,7 +34,6 @@ class CursosPorProfesorView(APIView):
                 {
                     "id": curso.id_curso.id_curso,
                     "nombre": curso.id_curso.nombre_curso,
-                    "seccion": getattr(curso.id_curso, 'seccion', None),
                 }
                 for curso in cursos_profesor
             ]

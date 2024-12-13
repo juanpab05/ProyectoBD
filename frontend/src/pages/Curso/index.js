@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; 
 import { useParams } from 'react-router-dom'; // Para obtener los parámetros de la URL
 import { fetchCursosPorProfesor } from '../../api/cursoApi'; // API personalizada
 import '../style.css';
@@ -8,8 +9,8 @@ const CursosProfesor = () => {
   const [cursos, setCursos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  console.log(nombreUsuario)
   useEffect(() => {
     const fetchCursos = async () => {
       try {
@@ -63,13 +64,14 @@ const CursosProfesor = () => {
           <div className="list">
             {cursos.map((curso, index) => (
               <div key={index} className="item">
-                <span className="clase">Curso: {curso.nombre}</span>
-                <div className="date">
-                  <span className="class-date">Sección: {curso.seccion}</span>
-                </div>
+                <Link to={`/${nombreUsuario}/cursos/${curso.nombre}/historial`}> 
+                  {/* Enlazar al nombre del curso */} 
+                  <span className="clase">Curso: {curso.nombre}</span> 
+                </Link>
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
